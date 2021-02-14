@@ -10,7 +10,3 @@ data class Text(
     val owner: User,
     val watchers: List<String>
 )
-
-enum class TextPublicity{
-    PUBLIC, PRIVATE, LIMITED
-}
