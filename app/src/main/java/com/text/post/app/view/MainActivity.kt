@@ -26,10 +26,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mainActivityViewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
+    }
+
+    override fun onStart() {
+        super.onStart()
         mainActivityViewModel.isUpdateLiveData.observe(this, isUpdateObserver)
         mainActivityViewModel.textLiveData.observe(this, textsObserver)
         mainActivityViewModel.userLiveData.observe(this, userObserver)
-
     }
 
     override fun onStop() {
