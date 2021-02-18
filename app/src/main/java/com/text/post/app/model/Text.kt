@@ -7,6 +7,6 @@ data class Text(
     val text: String,
     val dateTime: LocalDateTime,
     val textPublicity: TextPublicity,
-    val owner: User,
+    val owner: String,
     val watchers: List<String>
 )
