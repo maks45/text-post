@@ -2,6 +2,7 @@
 buildscript {
     ext.kotlin_version = "1.4.30"
     ext.lifecycle_version = "2.3.0"
+    ext.roomVersion = '2.2.5'
     ext.retrofit_version = "2.9.0"
     ext.material_version = "1.3.0"
     repositories {

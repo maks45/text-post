@@ -2,17 +2,18 @@ package com.text.post.app.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.text.post.app.R
+import com.text.post.app.di.component.ApplicationComponent
 import com.text.post.app.model.Text
 import com.text.post.app.model.User
 import com.text.post.app.viewmodel.MainActivityViewModel
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
-    @Inject
-    lateinit var mainActivityViewModel: MainActivityViewModel
+    private val mainActivityViewModel: MainActivityViewModel by viewModels()
+
 
     val isUpdateObserver = Observer<Boolean> {
         //TODO update ui
@@ -25,9 +26,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        (application as ApplicationComponent).injectMainActivity(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mainActivityViewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
     }
 
     override fun onStart() {
