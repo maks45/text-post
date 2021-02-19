@@ -4,10 +4,9 @@ import androidx.lifecycle.LiveData
 import com.text.post.app.di.module.NetworkModule
 import com.text.post.app.di.module.RoomModule
 import com.text.post.app.model.User
+import com.text.post.app.room.UserDao
 
 class UserRepository(
-    var userLiveData: LiveData<User>,
-    var RoomModule: RoomModule,
-    var networkModule: NetworkModule
+    val userDao: UserDao
 ) {
 }

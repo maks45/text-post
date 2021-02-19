@@ -22,13 +22,13 @@ class RoomModule constructor(val app: Application){
 
     @Singleton
     @Provides
-    fun textDao(textRoomDatabase: TextRoomDatabase): TextDao {
-        return textRoomDatabase.textDao()
+    fun textDao(): TextDao {
+        return textRoomDatabase().textDao()
     }
 
     @Singleton
     @Provides
-    fun userDao(textRoomDatabase: TextRoomDatabase): UserDao {
-        return textRoomDatabase.userDao()
+    fun userDao(): UserDao {
+        return textRoomDatabase().userDao()
     }
 }

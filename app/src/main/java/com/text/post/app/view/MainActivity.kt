@@ -33,15 +33,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        mainActivityViewModel.isUpdateLiveData.observe(this, isUpdateObserver)
-        mainActivityViewModel.textLiveData.observe(this, textsObserver)
-        mainActivityViewModel.userLiveData.observe(this, userObserver)
+       // mainActivityViewModel.isUpdateLiveData.observe(this, isUpdateObserver)
+       // mainActivityViewModel.textLiveData.observe(this, textsObserver)
+       // mainActivityViewModel.userLiveData.observe(this, userObserver)
     }
 
     override fun onStop() {
         super.onStop()
-        mainActivityViewModel.isUpdateLiveData.removeObserver(isUpdateObserver)
-        mainActivityViewModel.textLiveData.removeObserver(textsObserver)
-        mainActivityViewModel.userLiveData.removeObserver(userObserver)
+       // mainActivityViewModel.isUpdateLiveData.removeObserver(isUpdateObserver)
+       // mainActivityViewModel.textLiveData.removeObserver(textsObserver)
+       // mainActivityViewModel.userLiveData.removeObserver(userObserver)
     }
 }
